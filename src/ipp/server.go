@@ -22,13 +22,13 @@ func NewTServer() *TServer {
 }
 
 func (obj *TServer) RunServer() error {
-	raddr, err := net.ResolveUDPAddr("udp", ":9595")
+	addr, err := net.ResolveUDPAddr("udp", ":9595")
 	if err != nil {
 		Logger.Print(err)
 		return err
 	}
 
-	conn, err := net.ListenUDP("udp", raddr)
+	conn, err := net.ListenUDP("udp", addr)
 	if err != nil {
 		Logger.Print(err)
 		return err
@@ -80,7 +80,7 @@ func (obj *TServer) RunClient() error {
 
 	defer conn.Close()
 
-	interval := time.NewTicker(time.Second * 5)
+	interval := time.NewTicker(time.Second * 3)
 	defer func() {
 		interval.Stop()
 	}()

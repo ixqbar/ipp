@@ -10,9 +10,10 @@ import (
 
 var version = flag.Bool("version", false, "print current version")
 var showLocalIp = flag.Bool("ip", false, "print current machine ip")
-var runAsServer = flag.Bool("server", true, "run as server mode")
+var runAsServer = flag.Bool("server", false, "run as server mode")
 var runAsClient = flag.Bool("client", false, "run as client mode")
 var verbose = flag.Bool("verbose", false, "show running logs")
+var help = flag.Bool("help", true, "show help")
 
 func usage() {
 	fmt.Printf("Usage: %s options\nOptions:\n", os.Args[0])
@@ -38,7 +39,7 @@ func main() {
 		ipp.Run(false)
 	} else if *runAsServer {
 		ipp.Run(true)
-	} else {
+	} else if *help {
 		usage()
 	}
 }

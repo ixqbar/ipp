@@ -12,3 +12,6 @@ v0.0.1
 ./bin/ip_linux --client --verbose
 ./bin/ip_linux --server
 ```
+
+### support
+* qq group 233415606
