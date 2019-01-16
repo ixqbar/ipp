@@ -24,5 +24,4 @@ _testmain.go
 github.com
 golang.org
 .idea
-bin
 wasm/
